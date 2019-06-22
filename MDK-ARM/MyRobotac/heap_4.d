@@ -1,0 +1,13 @@
+myrobotac\heap_4.o: ..\FreeRTOS\portable\MemMang\heap_4.c
+myrobotac\heap_4.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\heap_4.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\heap_4.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\portable.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\heap_4.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\task.h
+myrobotac\heap_4.o: ..\FreeRTOS\include\list.h

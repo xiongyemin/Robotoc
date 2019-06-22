@@ -1,0 +1,14 @@
+myrobotac\stream_buffer.o: ..\FreeRTOS\stream_buffer.c
+myrobotac\stream_buffer.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\stream_buffer.o: E:\keil\ARM\ARMCC\Bin\..\include\string.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\stream_buffer.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\portable.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\task.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\list.h
+myrobotac\stream_buffer.o: ..\FreeRTOS\include\stream_buffer.h

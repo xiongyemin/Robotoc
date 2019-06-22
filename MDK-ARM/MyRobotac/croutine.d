@@ -1,0 +1,14 @@
+myrobotac\croutine.o: ..\FreeRTOS\croutine.c
+myrobotac\croutine.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\croutine.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\croutine.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\croutine.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\croutine.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\croutine.o: ..\FreeRTOS\include\portable.h
+myrobotac\croutine.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\croutine.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\croutine.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\croutine.o: ..\FreeRTOS\include\task.h
+myrobotac\croutine.o: ..\FreeRTOS\include\list.h
+myrobotac\croutine.o: ..\FreeRTOS\include\croutine.h
+myrobotac\croutine.o: ..\FreeRTOS\include\list.h

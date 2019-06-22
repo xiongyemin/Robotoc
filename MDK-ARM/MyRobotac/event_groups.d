@@ -1,0 +1,15 @@
+myrobotac\event_groups.o: ..\FreeRTOS\event_groups.c
+myrobotac\event_groups.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\event_groups.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\event_groups.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\portable.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\event_groups.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\task.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\list.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\timers.h
+myrobotac\event_groups.o: ..\FreeRTOS\include\event_groups.h

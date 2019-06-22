@@ -1,0 +1,15 @@
+myrobotac\queue.o: ..\FreeRTOS\queue.c
+myrobotac\queue.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+myrobotac\queue.o: E:\keil\ARM\ARMCC\Bin\..\include\string.h
+myrobotac\queue.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\queue.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\queue.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\queue.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\queue.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\queue.o: ..\FreeRTOS\include\portable.h
+myrobotac\queue.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\queue.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\queue.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\queue.o: ..\FreeRTOS\include\task.h
+myrobotac\queue.o: ..\FreeRTOS\include\list.h
+myrobotac\queue.o: ..\FreeRTOS\include\queue.h

@@ -1,0 +1,16 @@
+myrobotac\tasks.o: ..\FreeRTOS\tasks.c
+myrobotac\tasks.o: E:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+myrobotac\tasks.o: E:\keil\ARM\ARMCC\Bin\..\include\string.h
+myrobotac\tasks.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\tasks.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\tasks.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\tasks.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\tasks.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\tasks.o: ..\FreeRTOS\include\portable.h
+myrobotac\tasks.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\tasks.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\tasks.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\tasks.o: ..\FreeRTOS\include\task.h
+myrobotac\tasks.o: ..\FreeRTOS\include\list.h
+myrobotac\tasks.o: ..\FreeRTOS\include\timers.h
+myrobotac\tasks.o: ..\FreeRTOS\include\stack_macros.h

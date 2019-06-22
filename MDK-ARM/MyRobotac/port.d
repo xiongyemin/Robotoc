@@ -1,0 +1,12 @@
+myrobotac\port.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\port.c
+myrobotac\port.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\port.o: E:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+myrobotac\port.o: E:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+myrobotac\port.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\port.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\port.o: ..\FreeRTOS\include\portable.h
+myrobotac\port.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\port.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\port.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\port.o: ..\FreeRTOS\include\task.h
+myrobotac\port.o: ..\FreeRTOS\include\list.h
