@@ -33,5 +33,9 @@ typedef struct {
 }RC_Type;
 extern RC_Type remote_control;
 void Callback_RC_Handle(RC_Type* rc, uint8_t* buff);
+#define REMOTE_TASK_PRIO 4            //任务优先级
+#define REMOTE_STK_SIZE 128           //任务堆栈大小
+extern TaskHandle_t RemoteTask_Handler;        //任务句柄
+void Remote_task(void *p_arg);   //任务函数
 #endif
 

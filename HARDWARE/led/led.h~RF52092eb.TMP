@@ -1,0 +1,14 @@
+#ifndef LED
+#define LED
+#include "main.h"
+//LED3任务
+#define LED3_TASK_PRIO 3              //任务优先级
+#define LED3_STK_SIZE 30              //任务堆栈大小
+extern TaskHandle_t LED3_Handler;     //任务句柄
+void Led3_task(void *p_arg);          //任务函数
+//LED4任务
+#define LED4_TASK_PRIO 4              //任务优先级
+#define LED4_STK_SIZE 30              //任务堆栈大小
+extern TaskHandle_t LED4_Handler;     //任务句柄
+void Led4_task(void *p_arg);          //任务函数
+#endif

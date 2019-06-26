@@ -38,7 +38,8 @@
 "myrobotac\timers.o"
 "myrobotac\port.o"
 "myrobotac\heap_4.o"
+"myrobotac\led.o"
 --library_type=microlib --strict --scatter "MyRobotac\MyRobotac.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list "MyRobotac.map" -o MyRobotac\MyRobotac.axf
+--list "..\INF\MyRobotac.map" -o MyRobotac\MyRobotac.axf

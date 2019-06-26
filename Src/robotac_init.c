@@ -1,4 +1,24 @@
 #include "robotac_init.h"
+TaskHandle_t StartTask_Handler;        //任务句柄
+TaskHandle_t SanwaiTask_Handler;        //任务句柄
+void Robotac_Init(void){
+	HAL_Init();
+	SystemClock_Config();
+	MY_GPIO_Init();
+	MY_TIM4_Pwm_Init();
+	MY_DMA_Init();
+	MY_USART1_UART_Init();
+	MY_USART6_UART_Init();
+    delay_init(168);
+	xTaskCreate(	(TaskFunction_t) Start_task,
+							(const char *) "Start_task",		
+							(const configSTACK_DEPTH_TYPE) ROBOTAC_STK_SIZE,
+							(void * ) NULL,
+							(UBaseType_t) ROBOTAC_TASK_PRIO,
+							(TaskHandle_t *) &StartTask_Handler );
+	vTaskStartScheduler();
+}
+
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -47,15 +67,42 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-void Robotac_Init(void){
-	HAL_Init();
-	SystemClock_Config();
-	MY_GPIO_Init();
-	MY_TIM2_Init();
-	MY_TIM4_Pwm_Init();
-	MY_DMA_Init();
-	MY_USART1_UART_Init();
-	MY_USART6_UART_Init();
-	HAL_UART_Receive_IT_IDLE(&huart1,UART_Buffer,100);   //启动串口接收
-  //delay_init(168);
+void Start_task(void *pvParameters){
+	taskENTER_CRITICAL();
+	Remote_msg=xQueueCreate(USART_QUE_NUM,sizeof(RC_Type));
+	xTaskCreate(	(TaskFunction_t) Remote_task,
+							(const char *) "Remote_task",		
+							(const configSTACK_DEPTH_TYPE) REMOTE_STK_SIZE,
+							(void * ) NULL,
+							(UBaseType_t) REMOTE_TASK_PRIO,
+							(TaskHandle_t *) &RemoteTask_Handler );
+	xTaskCreate(	(TaskFunction_t) Led1_task,
+							(const char *) "Led1_task",		
+							(const configSTACK_DEPTH_TYPE) LED1_STK_SIZE,
+							(void * ) NULL,
+							(UBaseType_t) LED1_TASK_PRIO,
+							(TaskHandle_t *) &LED1_Handler );
+//	xTaskCreate(	(TaskFunction_t) Sanwai_task,
+//							(const char *) "Sanwai_task",		
+//							(const configSTACK_DEPTH_TYPE) SANWAI_STK_SIZE,
+//							(void * ) NULL,
+//							(UBaseType_t) SANWAI_TASK_PRIO,
+//							(TaskHandle_t *) &SanwaiTask_Handler );
+	vTaskDelete(StartTask_Handler);
+	taskEXIT_CRITICAL();
 }
+
+void Sanwai_task(void *p_arg){
+	while (1){
+	  wave_form_data[0]=(short)remote_control.ch1;
+	  wave_form_data[1]=(short)remote_control.ch2;
+	  wave_form_data[2]=(short)remote_control.ch3;
+	  wave_form_data[3]=(short)remote_control.ch4;
+	  wave_form_data[4]=(short)remote_control.switch_left;
+	  wave_form_data[5]=(short)remote_control.switch_right;
+	  shanwai_send_wave_form();
+  }
+}
+
+
+

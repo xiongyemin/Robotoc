@@ -4,17 +4,7 @@
 int main(void)
 {
   Robotac_Init();//所有的初始化
-  while (1){
-	  wave_form_data[0]=(short)remote_control.ch1;
-	  wave_form_data[1]=(short)remote_control.ch2;
-	  wave_form_data[2]=(short)remote_control.ch3;
-	  wave_form_data[3]=(short)remote_control.ch4;
-	  wave_form_data[4]=(short)remote_control.switch_left;
-	  wave_form_data[5]=(short)remote_control.switch_right;
-	  shanwai_send_wave_form();
-  }
 }
-
 
 
 

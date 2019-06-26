@@ -32,6 +32,9 @@ extern "C" {
 #include "sys.h"
 #include "delay.h"
 #include "stdio.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

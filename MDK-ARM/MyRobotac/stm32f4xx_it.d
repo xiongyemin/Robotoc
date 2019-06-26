@@ -34,4 +34,14 @@ myrobotac\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart
 myrobotac\stm32f4xx_it.o: ../Inc/sys.h
 myrobotac\stm32f4xx_it.o: ../Inc/delay.h
 myrobotac\stm32f4xx_it.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\portable.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\task.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\list.h
+myrobotac\stm32f4xx_it.o: ..\FreeRTOS\include\queue.h
 myrobotac\stm32f4xx_it.o: ../Inc/stm32f4xx_it.h

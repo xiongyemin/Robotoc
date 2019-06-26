@@ -36,4 +36,14 @@ myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 myrobotac\sanwai.o: ../Inc/sys.h
 myrobotac\sanwai.o: ../Inc/delay.h
 myrobotac\sanwai.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\portable.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\sanwai.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\task.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\list.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\queue.h
 myrobotac\sanwai.o: ..\Control\Inc\Remote_Ctrl.h

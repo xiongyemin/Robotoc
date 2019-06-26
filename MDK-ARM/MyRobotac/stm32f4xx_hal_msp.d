@@ -34,5 +34,15 @@ myrobotac\stm32f4xx_hal_msp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 myrobotac\stm32f4xx_hal_msp.o: ../Inc/sys.h
 myrobotac\stm32f4xx_hal_msp.o: ../Inc/delay.h
 myrobotac\stm32f4xx_hal_msp.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\portable.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\task.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\list.h
+myrobotac\stm32f4xx_hal_msp.o: ..\FreeRTOS\include\queue.h
 myrobotac\stm32f4xx_hal_msp.o: ../Inc/usart.h
 myrobotac\stm32f4xx_hal_msp.o: ..\Control\Inc\Remote_Ctrl.h

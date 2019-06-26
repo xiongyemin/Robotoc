@@ -22,10 +22,11 @@ PUTCHAR_PROTOTYPE
   HAL_UART_Transmit(&huart6, (uint8_t *)&ch, 1, 0xFFFF);
   return ch;
 }
-u8 UART_Buffer[100];
+u8 UART_Buffer[USART_LEN];
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart6;
 DMA_HandleTypeDef hdma_usart1_rx;
+QueueHandle_t Remote_msg;
 
 void MY_USART1_UART_Init(void)
 {
@@ -51,6 +52,7 @@ void MY_USART6_UART_Init(void){
   huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart6.Init.OverSampling = UART_OVERSAMPLING_16;
   HAL_UART_Init(&huart6);
+  HAL_UART_Receive_IT_IDLE(&huart1,UART_Buffer,USART_LEN);   //启动串口接收
 }
 
 
@@ -131,7 +133,7 @@ void HAL_UART_IDLE_IRQHandler(UART_HandleTypeDef *huart)
 {
 		
 		uint32_t DMA_FLAGS,tmp;
-	
+	BaseType_t Remote_HigherPriorityTaskWoken;
 			
 	if(__HAL_UART_GET_FLAG(huart, UART_FLAG_IDLE)){
 			
@@ -151,7 +153,8 @@ void HAL_UART_IDLE_IRQHandler(UART_HandleTypeDef *huart)
 		
 	
 	Callback_RC_Handle(&remote_control,huart->pRxBuffPtr);
-	
+	xQueueSendFromISR(Remote_msg,&remote_control,&Remote_HigherPriorityTaskWoken);
+	if(Remote_HigherPriorityTaskWoken==pdTRUE)portYIELD_FROM_ISR(Remote_HigherPriorityTaskWoken);
 }
 
 //串口1中断函数，处理遥控器数据

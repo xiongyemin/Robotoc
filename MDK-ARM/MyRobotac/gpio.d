@@ -35,3 +35,13 @@ myrobotac\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 myrobotac\gpio.o: ../Inc/sys.h
 myrobotac\gpio.o: ../Inc/delay.h
 myrobotac\gpio.o: E:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+myrobotac\gpio.o: ..\FreeRTOS\include\FreeRTOS.h
+myrobotac\gpio.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+myrobotac\gpio.o: ..\FreeRTOS\include\projdefs.h
+myrobotac\gpio.o: ..\FreeRTOS\include\portable.h
+myrobotac\gpio.o: ..\FreeRTOS\include\deprecated_definitions.h
+myrobotac\gpio.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+myrobotac\gpio.o: ..\FreeRTOS\include\mpu_wrappers.h
+myrobotac\gpio.o: ..\FreeRTOS\include\task.h
+myrobotac\gpio.o: ..\FreeRTOS\include\list.h
+myrobotac\gpio.o: ..\FreeRTOS\include\queue.h
