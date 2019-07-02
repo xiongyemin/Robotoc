@@ -1,11 +1,14 @@
 #include "Remote_Ctrl.h"
 #include "Sanwai.h"
 #include "usart.h"
+#include "bsp_can.h"
+#include "pid.h"
 RC_Type remote_control;
 uint32_t  Latest_Remote_Control_Pack_Time = 0;
 uint32_t  LED_Flash_Timer_remote_control = 0;
 uint32_t dbus_time=0;//用于检测遥控器是否离线
 TaskHandle_t RemoteTask_Handler;
+TaskHandle_t RemoteInfo_Handler;
 void Callback_RC_Handle(RC_Type* rc, uint8_t* buff)
 {
 	rc->ch1 = (buff[0] | buff[1]<<8) & 0x07FF;
@@ -44,15 +47,28 @@ void Callback_RC_Handle(RC_Type* rc, uint8_t* buff)
 }
 void Remote_task(void *p_arg){
 	RC_Type my_remote;
+	int32_t set_spd = 0;
 		while (1){
-			if(xQueueReceive(Remote_msg,&my_remote,5)){
-				wave_form_data[0]=(short)my_remote.ch1;
-				wave_form_data[1]=(short)my_remote.ch2;
-				wave_form_data[2]=(short)my_remote.ch3;
-				wave_form_data[3]=(short)my_remote.ch4;
-				wave_form_data[4]=(short)my_remote.switch_left;
-				wave_form_data[5]=(short)my_remote.switch_right;
-				shanwai_send_wave_form();
-			}
+			if(xQueueReceive(Remote_msg,&my_remote,TICKTOWAIT_QUE)){
+			set_spd = my_remote.ch4*8000/660;
+			for(int i=0; i<4; i++)
+				{	
+					motor_pid[i].target = set_spd; 																							
+					motor_pid[i].f_cal_pid(&motor_pid[i],moto_chassis[i].speed_rpm);    //根据设定值进行PID计算。
+				}
+				set_moto_current(&hcan1, &My_TxHeader,motor_pid[0].output,   //将PID的计算结果通过CAN发送到电机
+                        motor_pid[1].output,
+                        motor_pid[2].output,
+                        motor_pid[3].output);
+		}
+	}
+}
+void Remote_Info(void *p_arg){
+	//获取信号量
+	while(1){
+		if(xSemaphoreTake(Remote_Sem,TICKTOWAIT_SEM)){
+			Callback_RC_Handle(&remote_control,huart1.pRxBuffPtr);
+			xQueueSend(Remote_msg,&remote_control,TICKTOWAIT_SEM);
+		}
 	}
 }

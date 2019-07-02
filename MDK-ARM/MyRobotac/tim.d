@@ -24,6 +24,7 @@ myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 myrobotac\tim.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -45,5 +46,7 @@ myrobotac\tim.o: ..\FreeRTOS\include\mpu_wrappers.h
 myrobotac\tim.o: ..\FreeRTOS\include\task.h
 myrobotac\tim.o: ..\FreeRTOS\include\list.h
 myrobotac\tim.o: ..\FreeRTOS\include\queue.h
+myrobotac\tim.o: ../Inc/can.h
+myrobotac\tim.o: ..\FreeRTOS\include\semphr.h
 myrobotac\tim.o: ../Inc/usart.h
 myrobotac\tim.o: ..\Control\Inc\Remote_Ctrl.h

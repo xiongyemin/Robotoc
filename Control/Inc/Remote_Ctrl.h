@@ -33,9 +33,16 @@ typedef struct {
 }RC_Type;
 extern RC_Type remote_control;
 void Callback_RC_Handle(RC_Type* rc, uint8_t* buff);
+#define TICKTOWAIT_QUE 5
+#define TICKTOWAIT_SEM 5
+//主要根据遥控器数据处理电机
 #define REMOTE_TASK_PRIO 4            //任务优先级
 #define REMOTE_STK_SIZE 128           //任务堆栈大小
 extern TaskHandle_t RemoteTask_Handler;        //任务句柄
 void Remote_task(void *p_arg);   //任务函数
+#define REMOTEINFO_TASK_PRIO 4 
+#define REMOTEINFO_STK_SIZE 256
+extern TaskHandle_t RemoteInfo_Handler;
+void Remote_Info(void *p_arg);
 #endif
 

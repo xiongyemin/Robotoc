@@ -23,6 +23,7 @@ myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 myrobotac\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -44,6 +45,8 @@ myrobotac\main.o: ..\FreeRTOS\include\mpu_wrappers.h
 myrobotac\main.o: ..\FreeRTOS\include\task.h
 myrobotac\main.o: ..\FreeRTOS\include\list.h
 myrobotac\main.o: ..\FreeRTOS\include\queue.h
+myrobotac\main.o: ../Inc/can.h
+myrobotac\main.o: ..\FreeRTOS\include\semphr.h
 myrobotac\main.o: ../Inc/robotac_init.h
 myrobotac\main.o: ../Inc/tim.h
 myrobotac\main.o: ../Inc/usart.h
@@ -52,3 +55,6 @@ myrobotac\main.o: ../Inc/gpio.h
 myrobotac\main.o: ../Inc/Sanwai.h
 myrobotac\main.o: ../Inc/dma.h
 myrobotac\main.o: ..\HARDWARE\led\led.h
+myrobotac\main.o: ..\Control\Inc\pid.h
+myrobotac\main.o: ..\Control\Inc\bsp_can.h
+myrobotac\main.o: ..\Control\Inc\pwm.h

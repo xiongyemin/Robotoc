@@ -4,12 +4,14 @@ TaskHandle_t SanwaiTask_Handler;        //任务句柄
 void Robotac_Init(void){
 	HAL_Init();
 	SystemClock_Config();
+	delay_init(168);
 	MY_GPIO_Init();
 	MY_TIM4_Pwm_Init();
 	MY_DMA_Init();
-	MY_USART1_UART_Init();
-	MY_USART6_UART_Init();
-    delay_init(168);
+	MY_USART1_UART_Init();//遥控器使用串口1
+	MY_USART6_UART_Init();//山外使用的串口6
+	MX_CAN1_Init();
+	all_pid_init();//电机PID初始化
 	xTaskCreate(	(TaskFunction_t) Start_task,
 							(const char *) "Start_task",		
 							(const configSTACK_DEPTH_TYPE) ROBOTAC_STK_SIZE,
@@ -69,7 +71,14 @@ void SystemClock_Config(void)
 
 void Start_task(void *pvParameters){
 	taskENTER_CRITICAL();
-	Remote_msg=xQueueCreate(USART_QUE_NUM,sizeof(RC_Type));
+	Remote_msg=xQueueCreate(USART_QUE_NUM,sizeof(RC_Type));//创建遥控器信息队列
+	Remote_Sem=xSemaphoreCreateBinary();//创建遥控器信号量
+	xTaskCreate(	(TaskFunction_t) Remote_Info,
+							(const char *) "Remote_Info",		
+							(const configSTACK_DEPTH_TYPE) REMOTEINFO_STK_SIZE,
+							(void * ) NULL,
+							(UBaseType_t) REMOTEINFO_TASK_PRIO,
+							(TaskHandle_t *) &RemoteInfo_Handler );
 	xTaskCreate(	(TaskFunction_t) Remote_task,
 							(const char *) "Remote_task",		
 							(const configSTACK_DEPTH_TYPE) REMOTE_STK_SIZE,
@@ -82,12 +91,12 @@ void Start_task(void *pvParameters){
 							(void * ) NULL,
 							(UBaseType_t) LED1_TASK_PRIO,
 							(TaskHandle_t *) &LED1_Handler );
-//	xTaskCreate(	(TaskFunction_t) Sanwai_task,
-//							(const char *) "Sanwai_task",		
-//							(const configSTACK_DEPTH_TYPE) SANWAI_STK_SIZE,
-//							(void * ) NULL,
-//							(UBaseType_t) SANWAI_TASK_PRIO,
-//							(TaskHandle_t *) &SanwaiTask_Handler );
+	xTaskCreate(	(TaskFunction_t) Sanwai_task,
+							(const char *) "Sanwai_task",		
+							(const configSTACK_DEPTH_TYPE) SANWAI_STK_SIZE,
+							(void * ) NULL,
+							(UBaseType_t) SANWAI_TASK_PRIO,
+							(TaskHandle_t *) &SanwaiTask_Handler );
 	vTaskDelete(StartTask_Handler);
 	taskEXIT_CRITICAL();
 }

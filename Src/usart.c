@@ -26,8 +26,8 @@ u8 UART_Buffer[USART_LEN];
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart6;
 DMA_HandleTypeDef hdma_usart1_rx;
-QueueHandle_t Remote_msg;
-
+QueueHandle_t Remote_msg;//遥控器队列
+SemaphoreHandle_t Remote_Sem;//遥控器信号量
 void MY_USART1_UART_Init(void)
 {
 
@@ -150,10 +150,8 @@ void HAL_UART_IDLE_IRQHandler(UART_HandleTypeDef *huart)
 		__HAL_DMA_ENABLE(huart->hdmarx);
 		
 	}
-		
-	
-	Callback_RC_Handle(&remote_control,huart->pRxBuffPtr);
-	xQueueSendFromISR(Remote_msg,&remote_control,&Remote_HigherPriorityTaskWoken);
+	//释放信号量	
+	xSemaphoreGiveFromISR(Remote_Sem,&Remote_HigherPriorityTaskWoken);
 	if(Remote_HigherPriorityTaskWoken==pdTRUE)portYIELD_FROM_ISR(Remote_HigherPriorityTaskWoken);
 }
 

@@ -7,6 +7,9 @@
 #include "Sanwai.h"
 #include "dma.h"
 #include "led.h"
+#include "pid.h"
+#include "bsp_can.h"
+#include "pwm.h"
 void Robotac_Init(void);
 void SystemClock_Config(void);
 #define ROBOTAC_TASK_PRIO 1            //任务优先级

@@ -25,6 +25,7 @@ myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 myrobotac\sanwai.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -46,4 +47,6 @@ myrobotac\sanwai.o: ..\FreeRTOS\include\mpu_wrappers.h
 myrobotac\sanwai.o: ..\FreeRTOS\include\task.h
 myrobotac\sanwai.o: ..\FreeRTOS\include\list.h
 myrobotac\sanwai.o: ..\FreeRTOS\include\queue.h
+myrobotac\sanwai.o: ../Inc/can.h
+myrobotac\sanwai.o: ..\FreeRTOS\include\semphr.h
 myrobotac\sanwai.o: ..\Control\Inc\Remote_Ctrl.h
